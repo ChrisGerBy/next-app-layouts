@@ -2,26 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+body {
+  color: rgb(var(--foreground-rgb));
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+nav {
+  @apply py-4;
+}
+
+a {
+  @apply px-3 py-2 border mx-2 border-slate-500;
+}
+
+a.active {
+  @apply bg-slate-200;
+}
+
+h1 {
+  @apply py-4;
+}
+
+@keyframes blink {
+  0% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: red; /* Change this to your desired border color */
+  }
+  100% {
+    border-color: transparent;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.animate-blink {
+  animation: blink 1s ease-in-out 2; /* Adjust duration and timing function as needed */
 }
