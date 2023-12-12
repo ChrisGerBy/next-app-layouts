@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Link from 'next/link'
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -33,9 +34,9 @@ export default function RootLayout({
           <p>Root layout</p>
           <nav>
             {links.map((link) => (
-              <a key={link.label} href={link.href}>
+              <Link key={link.label} href={link.href}>
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
           {children}
